@@ -1,3 +1,5 @@
+// Only enable drop down if a governor is chosen
+
 // This page will store function for facility selection box and html display
 
 // Import getter and setter functions for facility data
@@ -6,7 +8,6 @@
 
 // Add a change event listener that listens for facility to be changed
 // If facility is changed, invoke the setter function
-
 
 // Export and declare a function that displays selection box for facilities
 
