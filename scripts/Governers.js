@@ -5,7 +5,7 @@
 // Declare a new variable that holds return value of governers getter function
 
 // Add a change event listener that listens for governer to be changed
-// If governer is changed, invoke the setter function
+// If governor is changed, invoke the setter function
 
 
 // Export and declare a function that displays selection box for governers

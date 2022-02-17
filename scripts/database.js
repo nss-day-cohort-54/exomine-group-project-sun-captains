@@ -23,7 +23,7 @@ const database = {
 
     ],
     purchases: [
-
+        {id: 1, colonyId: 1, mineralId: 1, amount: 10}
     ],
 
     transientState: {}
