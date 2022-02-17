@@ -1,0 +1,1 @@
+// This page will store function for colony mineral html display
