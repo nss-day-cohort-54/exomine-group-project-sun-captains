@@ -1,3 +1,4 @@
+import { FacilityMinerals } from "./FacilityMinerals.js"
 // This module will be in charge of structuring HTML
 // Import all necessary functions below
 
@@ -13,15 +14,16 @@ export const Exomine = () => {
     <article class="choices">
         <section class="choices_governors options">
         <h2>Choose Governor</h2>
-        ${()}
+        governor function goes here
     </section>
-    <section class="choices_colonies options">
-        <h2>Choose Colony</h2>
-        ${()}
+    <section class="choices_facilities options">
+        <h2>Choose Facility</h2>
+        facility function goes here
     </section>
         <section class="choices_facilityminerals options">
         <h2>Minerals at Facility</h2>
-        ${()}
+        ${FacilityMinerals()}
+    
     </section>
 
     <article>
@@ -32,7 +34,7 @@ export const Exomine = () => {
 
     <article class="purchases">
             <h2>Available Resources for Colony</h2>
-            ${()}
+            Colony purchase function goes here
         </article>
     `
 }

@@ -205,6 +205,11 @@ export const setFacility = (facilityId) => {
     document.dispatchEvent(new CustomEvent("stateChanged"))
 }
 
+export const setFacilityMineral = (facilityMineralId) => {
+    database.transientState.selectedFacilityMineral = facilityMineralId
+    document.dispatchEvent(new CustomEvent("stateChanged"))
+}
+
 
 export const purchaseMineral = () => {
     // Copy the current state of user choices
