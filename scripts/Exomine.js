@@ -16,19 +16,11 @@ export const Exomine = () => {
     <article class="choices">
         <section class="choices_governors options">
         <h2>Choose Governor</h2>
-<<<<<<< HEAD
-        governor function goes here
-    </section>
-    <section class="choices_facilities options">
-        <h2>Choose Facility</h2>
-        facility function goes here
-=======
         ${Governors()}
     </section>
     <section class="choices_facilities options">
         <h2>Choose Facility</h2>
         ${Facilities()}
->>>>>>> main
     </section>
         <section class="choices_facilityMinerals options">
         <h2>Minerals at Facility</h2>
