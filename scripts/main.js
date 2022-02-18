@@ -1,5 +1,9 @@
 // Import the exomine.js module
 import { Exomine } from "./Exomine.js"
+<<<<<<< HEAD
+=======
+
+>>>>>>> main
 // Set the variable mainContainer equal to the targeted area class container in index.html
 const mainContainer = document.querySelector("#container")
 
