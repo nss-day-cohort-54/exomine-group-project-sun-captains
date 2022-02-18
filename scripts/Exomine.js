@@ -1,5 +1,7 @@
 // This module will be in charge of structuring HTML
 // Import all necessary functions below
+import { Governors } from "./Governors.js"
+import { Facilities } from ./Facilities.js
 
 // Add event listener for purchase mineral button on this module
 
@@ -13,7 +15,7 @@ export const Exomine = () => {
     <article class="choices">
         <section class="choices_governors options">
         <h2>Choose Governor</h2>
-        ${()}
+        ${Governors()}
     </section>
     <section class="choices_colonies options">
         <h2>Choose Colony</h2>
@@ -21,7 +23,7 @@ export const Exomine = () => {
     </section>
         <section class="choices_facilityminerals options">
         <h2>Minerals at Facility</h2>
-        ${()}
+        ${Facilities()}
     </section>
 
     <article>
