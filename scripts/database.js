@@ -198,6 +198,10 @@ export const getMinerals = () => {
     return database.minerals.map(m => ({ ...m }))
 }
 
+export const getState = () => {
+    return {...database.transientState}
+}
+
 // use setter functions to set the state for all sets of data
 
 export const setFacility = (facilityId) => {
@@ -211,7 +215,7 @@ export const setFacilityMineral = (facilityMineralId) => {
 }
 
 export const setGovernor = (governorId) => {
-    database.transientState.selectedGovernor = governorId
+    database.transientState.selectedFacilityMineral = governorId
     document.dispatchEvent(new CustomEvent("stateChanged"))
 }
 

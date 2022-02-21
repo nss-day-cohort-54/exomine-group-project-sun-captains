@@ -24,7 +24,7 @@ export const Exomine = () => {
     </section>
         <section class="choices_facilityMinerals options">
         <h2>Minerals at Facility</h2>
-        ${FacilityMinerals()}
+        
     
     </section>
 
