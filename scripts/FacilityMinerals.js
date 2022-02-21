@@ -1,11 +1,11 @@
-import { getFacilityMinerals, setFacilityMineral, getMinerals } from "./database.js"
+import { getFacilityMinerals, setFacilityMineral, getMinerals, getState} from "./database.js"
 // rmember to import setters for selecting
 
 // Add a change event listener
     // if it's changed invoke the setter function
     document.addEventListener("change", 
     (event) => {
-    if (event.target.name === "facilityMineral") {
+    if (event.target.name === "mineral") {
         setFacilityMineral(parseInt(event.target.value))
     }
 })
@@ -28,18 +28,18 @@ const facilityMinerals = getFacilityMinerals()
 // define function that finds the amount of a certain mineral
 const findMineralAmount = (facilityMineral) => {
     // using the .find method to find the 
-    const foundMineral = facilityMinerals.find(
+    const foundMineral = minerals.find(
         // uses mineral as the parameter
-        (facilityMineral) => {
+        (mineral) => {
             // return the matching id, this finds the specific mineral
             return mineral.id === facilityMineral.mineralId
         }
     )
     // set var foundAmount to equal the specific minerals amount
-    let foundAmount = foundMineral.amount
     
+    return foundMineral
 }
-
+ 
 
 
 
@@ -50,13 +50,18 @@ const findMineralAmount = (facilityMineral) => {
 // main html for displaying mineral inventory in facility
 export const FacilityMinerals = () => {
     //iterates through the minerals array and returns a string displaying the mineral name and amount
+    let state = getState()
+    let filteredFacilityMinerals = facilityMinerals.filter(
+        facilityMineral => facilityMineral.facilityId === state.selectedFacility
+    )
     let html = `<ul>
         ${
-            minerals.map(mineral=> {
+            filteredFacilityMinerals.map(facilityMineral=> {
+                let foundMineral = findMineralAmount(facilityMineral)
                 return `<li>
                             
-                <input type="radio" name="mineral" value="${mineral.id}" /> 
-                            ${foundAmount} tons of ${mineral.name}
+                <input type="radio" name="mineral" value="${foundMineral.id}" /> 
+                            ${facilityMineral.amount} tons of ${foundMineral.name}
                         </li>`
             }).join("")
         }
