@@ -51,6 +51,7 @@ const findMineralAmount = (facilityMineral) => {
 export const FacilityMinerals = () => {
     //iterates through the minerals array and returns a string displaying the mineral name and amount
     let state = getState()
+    let facilityMineralContainer = document.querySelector(".choices_facilityMinerals")
     let filteredFacilityMinerals = facilityMinerals.filter(
         facilityMineral => facilityMineral.facilityId === state.selectedFacility
     )
@@ -66,7 +67,8 @@ export const FacilityMinerals = () => {
             }).join("")
         }
     </ul>`
-    return html
+    
+    facilityMineralContainer.innerHTML = html
 }
 // Displays amount of facility minerals available at the facility chosen 
 
