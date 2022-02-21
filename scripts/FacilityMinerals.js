@@ -56,7 +56,7 @@ export const FacilityMinerals = () => {
                 return `<li>
                             
                 <input type="radio" name="mineral" value="${mineral.id}" /> 
-                            ${mineralAmount} tons of ${mineral.name}
+                            ${foundAmount} tons of ${mineral.name}
                         </li>`
             }).join("")
         }
