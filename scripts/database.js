@@ -210,6 +210,15 @@ export const setFacilityMineral = (facilityMineralId) => {
     document.dispatchEvent(new CustomEvent("stateChanged"))
 }
 
+export const setGovernor = (governorId) => {
+    database.transientState.selectedGovernor = governorId
+    document.dispatchEvent(new CustomEvent("stateChanged"))
+}
+
+export const setColonyPurchase = (colonyPurchaseId) => {
+    database.transientState.selectedColonyPurchase = colonyPurchaseId
+    document.dispatchEvent(new CustomEvent("stateChanged"))
+}
 
 export const purchaseMineral = () => {
     // Copy the current state of user choices
