@@ -215,7 +215,7 @@ export const setFacilityMineral = (facilityMineralId) => {
 }
 
 export const setGovernor = (governorId) => {
-    database.transientState.selectedFacilityMineral = governorId
+    database.transientState.selectedGovernor = governorId
     document.dispatchEvent(new CustomEvent("stateChanged"))
 }
 

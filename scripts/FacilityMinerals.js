@@ -25,18 +25,18 @@ import { getFacilityMinerals, setFacilityMineral, getMinerals, getState} from ".
 // store the minerals and FacilityMinerals arrays in two variables
 const minerals = getMinerals()
 const facilityMinerals = getFacilityMinerals()
-// define function that finds the amount of a certain mineral
+// define function that finds the amount of a certain mineral chosen
 const findMineralAmount = (facilityMineral) => {
-    // using the .find method to find the 
+    // using the .find method to find the mineral with the right conditions
     const foundMineral = minerals.find(
         // uses mineral as the parameter
         (mineral) => {
-            // return the matching id, this finds the specific mineral
+            // return to check if matching ids of the mineral and mineralId property of the facility
             return mineral.id === facilityMineral.mineralId
         }
     )
-    // set var foundAmount to equal the specific minerals amount
     
+    // return foundMineral which will be the the mineral object 
     return foundMineral
 }
  
@@ -49,12 +49,16 @@ const findMineralAmount = (facilityMineral) => {
 
 // main html for displaying mineral inventory in facility
 export const FacilityMinerals = () => {
-    //iterates through the minerals array and returns a string displaying the mineral name and amount
+    // set a var to the getState function to get a copy of the current transient state 
     let state = getState()
+    // removed the FaciliyMinerals function from main html and added a query selector to input the new html
     let facilityMineralContainer = document.querySelector(".choices_facilityMinerals")
+    // defined a function that will filter through the facilityMinerals array to check if the facilityMineral
+    // has been selected(state being changed)
     let filteredFacilityMinerals = facilityMinerals.filter(
         facilityMineral => facilityMineral.facilityId === state.selectedFacility
     )
+    //for the facilityMineral selected html will be returned showing the amount of inventory for that facility
     let html = `<ul>
         ${
             filteredFacilityMinerals.map(facilityMineral=> {

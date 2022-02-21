@@ -23,7 +23,7 @@ export const Facilities = () => {
 
     let html =
 
-        `<select id="facility">
+        `<select disabled id="facility">
     <option value="0">Choose a facility</option>
     `
 
