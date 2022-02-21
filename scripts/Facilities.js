@@ -2,6 +2,7 @@
 
 // Import getter and setter functions for facility data
 import { getFacilities, setFacility } from "./database.js";
+import { FacilityMinerals } from "./FacilityMinerals.js";
 // Declare a new variable that holds return value of faciltiies getter function
 const facilities = getFacilities()
 // If facility is changed, invoke the setter function
@@ -11,6 +12,7 @@ document.addEventListener(
     (event) => {
         if (event.target.id === "facility") {
             setFacility(parseInt(event.target.value))
+            FacilityMinerals()
         }
     }
 )
@@ -21,23 +23,23 @@ export const Facilities = () => {
 
     let html =
 
-    `<select id="facility">
+        `<select id="facility">
     <option value="0">Choose a facility</option>
     `
 
-// Use .map() on faciltiies array for converting objects to <li> elements
-const listItemsArray = facilities.map(
-    (facility) => {
-        // each color id will print the color's name attributed to it
-        return `
+    // Use .map() on faciltiies array for converting objects to <li> elements
+    const listItemsArray = facilities.map(
+        (facility) => {
+            // each color id will print the color's name attributed to it
+            return `
     <option value="${facility.id}"> ${facility.name}</option>
     `
-    }
-)
-// Return html at the end
-html += listItemsArray.join("")
-html += `</select>`
+        }
+    )
+    // Return html at the end
+    html += listItemsArray.join("")
+    html += `</select>`
 
-return html
+    return html
 
 }
