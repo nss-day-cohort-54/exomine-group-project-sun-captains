@@ -14,5 +14,5 @@ renderAllHTML()
 // Add an event listener that will display the new state to the user
 document.addEventListener("stateChanged", event => {
     console.log("State of data has changed. Regenerating HTML...")
-    renderAllHTML()
+    // renderAllHTML()
 })
